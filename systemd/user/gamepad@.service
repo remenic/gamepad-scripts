@@ -1,0 +1,13 @@
+[Unit]
+Description=Supercharge DualSense Controller
+ConditionPathExists=/dev/gamepad-%I
+
+[Service]
+Type=simple
+ExecStart=/opt/scripts/gamepad.py %I
+StandardOutput=journal
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+

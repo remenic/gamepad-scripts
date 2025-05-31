@@ -1,0 +1,1 @@
+SUBSYSTEM=="input", ACTION=="add", ENV{ID_INPUT_JOYSTICK}=="1", ATTRS{uniq}!="", SYMLINK+="gamepad-$attr{uniq}", ENV{SYSTEMD_USER_WANTS}+="gamepad@$attr{uniq}.service", TAG+="systemd"
